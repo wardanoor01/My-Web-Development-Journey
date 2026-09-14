@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Basic Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        #clock {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        main {
+            padding: 40px;
+        }
+        a {
+            display: block;
+            margin: 15px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Website</h1>
+
+        <div id="clock">00:00:00</div>
+    </header>
+    <main>
+        <h2>Welcome to My Website</h2>
+
+        <p>This is a basic HTML website with some useful links.</p>
+
+        <h3>Useful Links</h3>
+
+        <a href="https://www.google.com" target="_blank">Google</a>
+
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+
+        <a href="https://www.youtube.com" target="_blank">YouTube</a>
+
+        <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a>
+    </main>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            hours = String(hours).padStart(2, "0");
+            minutes = String(minutes).padStart(2, "0");
+            seconds = String(seconds).padStart(2, "0");
+            document.getElementById("clock").textContent =
+            `${hours}:${minutes}:${seconds}`;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
